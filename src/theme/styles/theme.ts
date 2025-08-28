@@ -1,0 +1,68 @@
+export const global = {
+  primary: '#007BFF', //The most used color in the app for UI
+  secondary: '#6C757D', // The second color used for cancel and negative selections
+  background: '#FFFFFF',
+  text: '#212529',
+  white: '#fff',
+  black: '#000000',
+};
+
+export const COLORS = {
+  white: '#FFFFFF',
+  black: '#000000',
+  lightBlack: '#3B3B3B',
+  dark: '#121212',
+
+  courseBackground: '#FFFBFE',
+  eyeContainer: '#C2A372',
+  borderColor: '#FDDBFF',
+  borderColor2: '#FEEDFF',
+  light: '#F5F5F5',
+  grayLight: '#f5f5f5',
+  gray: '#A3A3A3',
+  gray1: '#8A8894',
+  primaryDark: '#8D1184',
+  primaryLight: '#E1B9DA',
+  primaryPurple: '#167EE6',
+  primaryGreen: '#FDAD95',
+  primary: '#DFDEDE',
+  link: '#6C0575',
+  lightred: '#D93F21',
+  error: '#FF1C1C',
+  lightpink: '#FEF4F7',
+  lightpink1: '#F9D9F9',
+  errorDark: '#FF0000',
+  lightGray: '#F7ECF5',
+  gradeintLeft: '#6D0E85',
+  gradeintRight: '#F25828',
+  lightPink: '#B85FAA',
+  darkGray: '#464646',
+  Thistle: '#B06AA4',
+  Orchid: '#AA4D9A',
+  loaderBg: 'rgba(255,255,255,0.7)',
+  alertCard: '#F8774A',
+  orange: '#D93F21',
+  redBorder: '#0F993E',
+  iconColor: '#FFE5F9',
+  attributeColor: '#8D1184',
+  botIcon: '#95168e',
+  dashBoardImg: '#F4F0FE',
+  dashboard: '#5F0B88',
+  progress1: '#0F993E',
+  progress2: '#DBE8DB',
+  tab: '#CFCFCF',
+  tabIcon: '#e6e6e6',
+  bubbleColor: '#991689',
+  lightGrayTab: '#d7d2d6',
+  tabBorder: 'rgba(255, 255, 255, 0.2)',
+  tabBackground: 'rgba(255, 255, 255, 0.55)',
+  bordercolor: '#EEE',
+};
+
+export const themes = {
+  
+  global: global,
+};
+
+export type ThemeType = 'enterprise' | 'jobSeeker' | 'global';
+
