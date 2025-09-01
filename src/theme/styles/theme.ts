@@ -6,13 +6,11 @@ export const global = {
   white: '#fff',
   black: '#000000',
 };
-
 export const COLORS = {
   white: '#FFFFFF',
   black: '#000000',
   lightBlack: '#3B3B3B',
   dark: '#121212',
-
   courseBackground: '#FFFBFE',
   eyeContainer: '#C2A372',
   borderColor: '#FDDBFF',
@@ -60,9 +58,7 @@ export const COLORS = {
 };
 
 export const themes = {
-  
   global: global,
 };
 
 export type ThemeType = 'enterprise' | 'jobSeeker' | 'global';
-
