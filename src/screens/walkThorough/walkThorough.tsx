@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet, Text, Pressable } from 'react-native';
+import { View, Image, StyleSheet, Text, Pressable, SafeAreaView} from 'react-native';
 import React from 'react';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { hp, wp } from '../../theme/styles/dimensions';
@@ -28,10 +28,12 @@ const WalkScreen = ({ navigation }: any) => {
     },
   ];
   const renderItem = ({ item }): any => (
+    <SafeAreaView>
     <View>
       <Image source={item.image} style={styles.img} />
       <Text style={styles.title}>{item.title}</Text>
     </View>
+    </SafeAreaView>
   );
 
   const renderPagination = (activeIndex: number) => {
@@ -89,8 +91,8 @@ const WalkScreen = ({ navigation }: any) => {
 };
 const styles = StyleSheet.create({
   img: {
-    width: hp(45),
-    height: wp(223),
+    width: wp(110),
+    height: hp(100),
   },
   skip: {
     fontFamily: 'Jost',

@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { THomeStack } from '../../navigation/types/types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 const Wishlist = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<THomeStack>>();
+
 
   return (
     <Pressable onPress={() => navigation.navigate('Notification')}>

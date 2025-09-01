@@ -3,19 +3,16 @@ import { hp, wp } from '../../../theme/styles/dimensions';
 
 const styles = StyleSheet.create({
   container: {
-    
     // left: 10,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-   img: {
-      width: hp(45),
-      height: wp(223),
-    },
-  // img: {
-  //   width: '100%',
-  // },
+  img: {
+    width: "100%",
+    height: hp(100),
+  },
+ 
   container1: { backgroundColor: '#fff' },
   logo: {
     width: '50%',

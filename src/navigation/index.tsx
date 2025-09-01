@@ -5,10 +5,11 @@ import MainStack from './mainstack';
 import AuthStack from './authstack';
 
 const Navigation = () => {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   return (
     <NavigationContainer>
       {isLoggedIn ? <MainStack /> : <AuthStack />}
+
     </NavigationContainer>
   );
 };

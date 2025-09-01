@@ -12,9 +12,10 @@ import {
   ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-// import Carousel from "react-native-snap-carousel";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { COLORS } from '../../theme/styles/theme';
+import { hp } from '../../theme/styles/dimensions';
+import { useNavigation } from '@react-navigation/native';
 const { width } = Dimensions.get('window');
 
 const banners = [
@@ -38,45 +39,79 @@ const categories = [
   { id: '3', name: 'Kids' },
   { id: '4', name: 'Accessories' },
 ];
+const products1 = [
+  {
+    id: '1',
+    title: 'Luxury Lawn',
+    brand: 'Laam',
+    price: '28,500',
+    rating: 4.5,
+    image: '../../assets/images/Frame.png',
+  },
+  {
+    id: '2',
+    title: 'Vitamin C ',
+    brand: '',
+    price: '1,050',
+    rating: 4.5,
+    image: 'https://i.ibb.co/m4sTtyr/facewash.png',
+  },
+  {
+    id: '3',
+    title: 'M-Mad’s',
+    brand: 'Laam',
+    price: '6,500',
+    rating: 4.5,
+    image: 'https://i.ibb.co/xhGhM4c/shoes.png',
+  },
+  {
+    id: '4',
+    title: 'Design 44B ',
+    brand: 'Sobia Nazir',
+    price: '14,500',
+    rating: 4.5,
+    image: 'https://i.ibb.co/LNQZ3MH/dress2.png',
+  },
+];
 const products = [
   {
-    id: "1",
-    title: "Luxury Lawn",
-    brand: "Laam",
-    price: "28,500",
+    id: '1',
+    title: 'Luxury Lawn',
+    brand: 'Laam',
+    price: '28,500',
     rating: 4.5,
-    image: "../../assets/images/Frame.png",
+    image: '../../assets/images/Frame.png',
   },
   {
-    id: "2",
-    title: "Vitamin C Face Wash",
-    brand: "",
-    price: "1,050",
+    id: '2',
+    title: 'Vitamin C Face Wash',
+    brand: '',
+    price: '1,050',
     rating: 4.5,
-    image: "https://i.ibb.co/m4sTtyr/facewash.png",
+    image: 'https://i.ibb.co/m4sTtyr/facewash.png',
   },
   {
-    id: "3",
-    title: "M-Mad’s Footwear",
-    brand: "Laam",
-    price: "6,500",
+    id: '3',
+    title: 'M-Mad’s Footwear',
+    brand: 'Laam',
+    price: '6,500',
     rating: 4.5,
-    image: "https://i.ibb.co/xhGhM4c/shoes.png",
+    image: 'https://i.ibb.co/xhGhM4c/shoes.png',
   },
   {
-    id: "4",
-    title: "Design 44B Luxury Lawn",
-    brand: "Sobia Nazir",
-    price: "14,500",
+    id: '4',
+    title: 'Design 44B Luxury Lawn',
+    brand: 'Sobia Nazir',
+    price: '14,500',
     rating: 4.5,
-    image: "https://i.ibb.co/LNQZ3MH/dress2.png",
+    image: 'https://i.ibb.co/LNQZ3MH/dress2.png',
   },
 ];
 
 const HomeScreen = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('1');
-
+const navigation = useNavigation();
   const renderItem = ({ item }) => {
     const isActive = selectedCategory === item.id;
     return (
@@ -90,24 +125,38 @@ const HomeScreen = () => {
       </Pressable>
     );
   };
+  const renderItem1 = ({ item }) => {
+    return (
+      <Pressable style={styles.imageContainer}>
+        <Image
+          source={require('../../assets/images/female.png')}
+          style={styles.icon2}
+        />
+        <View style={styles.CatContainer}>
+          <Text style={styles.tabText}>{item.title}</Text>
+        </View>
+      </Pressable>
+    );
+  };
 
   const ProductCard = ({ item }: any) => (
-  
-  <View style={styles.card}>
-    <Image source={require('../../assets/images/Frame.png')} style={styles.image} />
-    <TouchableOpacity style={styles.heartIcon}>
-      <Ionicons name="heart" size={18} color="#A3A3A3" />
-    </TouchableOpacity>
-    <Text style={styles.title}>{item.title}</Text>
-    {item.brand ? <Text style={styles.brand}>{item.brand}</Text> : null}
-    <Text style={styles.price}>PKR {item.price}</Text>
-    <View style={styles.rating}>
-      <Ionicons name="star" size={18} color="#A3A3A3" />
-      <Text style={styles.ratingText}>{item.rating}/5</Text>
+    <View style={styles.card}>
+      <Image
+        source={require('../../assets/images/Frame.png')}
+        style={styles.image}
+      />
+      <TouchableOpacity style={styles.heartIcon}>
+        <Ionicons name="heart" size={18} color="#A3A3A3" />
+      </TouchableOpacity>
+      <Text style={styles.title}>{item.title}</Text>
+      {item.brand ? <Text style={styles.brand}>{item.brand}</Text> : null}
+      <Text style={styles.price}>PKR {item.price}</Text>
+      <View style={styles.rating}>
+        <Ionicons name="star" size={18} color="#A3A3A3" />
+        <Text style={styles.ratingText}>{item.rating}/5</Text>
+      </View>
     </View>
-  </View>
-);
-
+  );
 
   return (
     <View style={styles.container}>
@@ -143,11 +192,11 @@ const HomeScreen = () => {
       {/* Special Offers Header */}
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionTitle}>Special Offers</Text>
-        <TouchableOpacity>
+        <TouchableOpacity  onPress={() => navigation.navigate("Special")}>
           <Text style={styles.viewAll}>View All</Text>
         </TouchableOpacity>
       </View>
-      <View style={{marginTop:10}}>
+      <View style={{ marginTop: 10 }}>
         <Image
           source={require('../../assets/images/Frame.png')}
           style={styles.img}
@@ -164,29 +213,50 @@ const HomeScreen = () => {
       </View>
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionTitle}>New Arrivals</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Arrivals")}>
           <Text style={styles.viewAll}>View All</Text>
         </TouchableOpacity>
       </View>
-<View style={{marginTop:10}}>
+      <ScrollView>
+      <View style={{ marginTop: 10 }}>
+        <FlatList
+          data={categories}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        />
+      </View>
+      {/* <Card> */}
+      <View style={styles.containerCard}>
+        <FlatList
+          data={products}
+          keyExtractor={item => item.id}
+          numColumns={2}
+          columnWrapperStyle={{ justifyContent: 'space-between' }}
+          renderItem={({ item }) => <ProductCard item={item} />}
+        />
+      </View>
+      {/* Categories */}
+      <View style={styles.sectionHeader}>
+        <Text style={styles.sectionTitle}>Categories</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("Categories")}>
+          <Text style={styles.viewAll}>View All</Text>
+        </TouchableOpacity>
+      </View>
       <FlatList
-        data={categories}
-        renderItem={renderItem}
+        data={products1}
         keyExtractor={item => item.id}
         horizontal
-        showsHorizontalScrollIndicator={false}
+        renderItem={renderItem1}
       />
-      </View>
-      <View style={styles.containerCard}>
-      <FlatList
-        data={products}
-        keyExtractor={(item) => item.id}
-        numColumns={2}
-        columnWrapperStyle={{ justifyContent: "space-between" }}
-        renderItem={({ item }) => <ProductCard item={item} />}
+       <FlatList
+        data={products1}
+        keyExtractor={item => item.id}
+        horizontal
+        renderItem={renderItem1}
       />
-    </View>
-      
+      </ScrollView>
     </View>
   );
 };
@@ -196,6 +266,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingHorizontal: 16,
     paddingTop: 25,
+    flex: 1,
+    paddingBottom:20
   },
   header: {
     flexDirection: 'row',
@@ -310,6 +382,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     borderColor: '#000',
   },
+  
   tabText: {
     fontSize: 14,
     color: '#000',
@@ -319,61 +392,84 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 
-
-
-
   // Card Side
-   containerCard: {
-    flex: 1,
-    backgroundColor: "#fff",
+  containerCard: {
+    // flex: 1,
+    backgroundColor: '#fff',
     padding: 8,
-    marginTop:8
+    marginTop: 8,
   },
   card: {
-    borderWidth:1,
-    borderColor:COLORS.gray,
-    backgroundColor: "#fff",
+    borderWidth: 0.89,
+    borderColor: COLORS.graylight,
+    backgroundColor: '#fff',
     borderRadius: 10,
     marginBottom: 15,
     flex: 0.48,
-    elevation: 3,
+
     padding: 8,
   },
   image: {
-    width: "100%",
-    height: 180,
+    width: '100%',
+    height: 213,
     borderRadius: 10,
   },
   heartIcon: {
-    position: "absolute",
+    position: 'absolute',
     top: 10,
     right: 10,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
     borderRadius: 20,
     padding: 5,
   },
   title: {
+    fontFamily: 'Jost',
+    fontWeight: '400',
+    color: '#000',
     fontSize: 14,
-    fontWeight: "600",
+
     marginTop: 5,
   },
   brand: {
     fontSize: 12,
-    color: "gray",
+    color: 'gray',
+    fontFamily: 'Jost',
+    fontWeight: '400',
   },
   price: {
+    fontFamily: 'Jost',
+    fontWeight: '500',
+    color: '#000',
     fontSize: 14,
-    fontWeight: "bold",
+
     marginVertical: 3,
   },
   rating: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   ratingText: {
     marginLeft: 3,
     fontSize: 12,
-    color: "gray",
+    color: 'black',
+  },
+
+  // Categories Section
+  imageContainer: {
+    // paddingVertical: 10,
+    paddingHorizontal: 2,
+    gap: 10,
+    marginRight: 10,
+    marginTop: hp(1.6),
+  },
+  icon2: {
+    width: 100,
+    height: 100,
+    borderRadius: 100,
+  },
+  CatContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

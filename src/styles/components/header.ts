@@ -5,9 +5,9 @@ import { COLORS } from '../../theme/styles/theme';
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: wp(1),
-    paddingTop: hp(4),
+    paddingTop: hp(2),
     paddingBottom: hp(1),
-    right:6.5
+    // right:6.5
   },
   headerRow: {
     flexDirection: 'row',
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     lineHeight: 38,
     color: COLORS.black,
     textAlign: 'center',
-
+    right: wp(8),
     flex: 1,
   },
   subheading: {

@@ -11,6 +11,9 @@ import ForgetPassChange from '../../screens/auth/ChangeVerfifcation/Forget';
 import Congratulations from '../../screens/auth/Congratulations/Congratulations';
 import Password from '../../screens/auth/ChangePassword/Password';
 import Home from '../../screens/home/home';
+import Profile from '../../screens/profile/profile';
+import TabNavigator from '../bottomTabBar';
+import Special from '../../screens/ChildScreens/Special';
 const Stack = createNativeStackNavigator<TAuthStack>();
 
 const screens = [
@@ -44,11 +47,7 @@ const screens = [
     name: 'ForgetPassChange',
     component: ForgetPassChange,
   },
-  {
-    key: 'Home',
-    name: 'Home',
-    component: Home,
-  },
+  
   {
     key: 'WalkScreen',
     name: 'WalkScreen',
@@ -64,6 +63,13 @@ const screens = [
     name: 'Congratulations',
     component: Congratulations,
   },
+  
+  {
+    key: 'TabNavigator',
+    name: 'TabNavigator',
+    component: TabNavigator,
+  },
+  
 ];
 const AuthStack = () => {
   return (

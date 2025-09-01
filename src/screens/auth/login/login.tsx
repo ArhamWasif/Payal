@@ -65,7 +65,7 @@ const SignInScreen = () => {
 
       {/* Sign In Button */}
       <TouchableOpacity style={styles.signInBtn}
-      onPress={() => navigation.navigate('Home')}
+      onPress={() => navigation.navigate('TabNavigator')}
       >
         <Text style={styles.signInText}>Sign In</Text>
       </TouchableOpacity>

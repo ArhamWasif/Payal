@@ -5,6 +5,9 @@ import Profile from '../screens/profile/profile';
 import { Keyboard } from 'react-native';
 import CustomBottomBar from '../components/CustomBottomBar/CustomBar';
 import Sale from '../screens/sale/sale';
+import Special from '../screens/ChildScreens/Special';
+import Categories from '../screens/ChildScreens/Categories';
+import Arrivals from '../screens/ChildScreens/Arrivals';
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => {
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
@@ -40,6 +43,9 @@ const TabNavigator = () => {
       <Tab.Screen name="Profile" component={Profile} />
       <Tab.Screen name="Wishlist" component={Home} />
       <Tab.Screen name="Sale" component={Sale} />
+        <Tab.Screen name="Special" component={Special} />
+               <Tab.Screen name="Categories" component={Categories} />
+               <Tab.Screen name="Arrivals" component={Arrivals} />
     </Tab.Navigator>
   );
 };

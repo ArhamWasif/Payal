@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   tabItem: {
     padding: 10,
-    // borderRadius: 10,
+    borderRadius: 10,
   },
   activeTab: {
     backgroundColor: '#222222', // active tab ka background thoda alag

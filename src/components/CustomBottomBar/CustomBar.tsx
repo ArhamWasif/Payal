@@ -11,11 +11,7 @@ const json = [
     icon: assets.home,
     disable: false,
   },
-  {
-    name: 'Profile',
-    icon: assets.profile,
-    disable: false,
-  },
+
   {
     name: 'Wishlist',
     icon: assets.wishlist,
@@ -24,6 +20,11 @@ const json = [
   {
     name: 'Sale',
     icon: assets.sale,
+    disable: false,
+  },
+    {
+    name: 'Profile',
+    icon: assets.profile,
     disable: false,
   },
 ];

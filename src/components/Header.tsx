@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   StyleProp,
   ViewStyle,
+  Pressable,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -14,6 +15,7 @@ interface HeaderProps {
   heading: string;
   subheading?: string;
   style?: StyleProp<ViewStyle>;
+ 
 }
 
 const Header: React.FC<HeaderProps> = ({ heading, style }) => {
@@ -22,12 +24,13 @@ const Header: React.FC<HeaderProps> = ({ heading, style }) => {
   return (
     <View style={[styles.container, style]}>
       <View style={styles.headerRow}>
-        <TouchableOpacity
+        <Pressable
           onPress={() => navigation.goBack()}
           style={styles.backButton}
         >
+          
           <Ionicons name="arrow-back" size={24} />
-        </TouchableOpacity>
+        </Pressable>
 
         <Text style={styles.heading}>{heading}</Text>
       </View>

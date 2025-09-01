@@ -3,6 +3,7 @@ export type THomeStack = {
   Notification: undefined;
   TabNavigator: undefined;
   Profile: undefined;
+  Special:undefined
 };
 export type TAuthStack = {
   Splash: undefined;

@@ -7,17 +7,19 @@ import { useNavigation } from '@react-navigation/native';
 const Splash1 = () => {
   const navigation = useNavigation();
   useEffect(() => {
-      setTimeout(() => {
-        navigation.navigate('WalkScreen');
-      }, 2000);
-    }, []);
+    setTimeout(() => {
+      navigation.navigate('Login');
+    }, 2000);
+  }, []);
   return (
-    <View style={styles.container}>
-      <Image
-        source={require('../../../assets/images/splash.png')}
-        style={styles.img}
-      />
-    </View>
+    <SafeAreaProvider>
+      <View style={styles.container}>
+        <Image
+          source={require('../../../assets/images/splash.png')}
+          style={styles.img}
+        />
+      </View>
+    </SafeAreaProvider>
   );
 };
 
