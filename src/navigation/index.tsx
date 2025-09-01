@@ -5,7 +5,7 @@ import MainStack from './mainstack';
 import AuthStack from './authstack';
 
 const Navigation = () => {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
   return (
     <NavigationContainer>
       {isLoggedIn ? <MainStack /> : <AuthStack />}
